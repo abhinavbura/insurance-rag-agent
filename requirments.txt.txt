@@ -1,0 +1,17 @@
+# Core RAG Dependencies
+chromadb==0.4.15
+sentence-transformers==2.2.2
+
+# Data Processing
+pandas==2.1.0
+numpy==1.24.0
+
+# LLM Integration
+langchain-openai>=0.1.0
+langchain-core>=0.1.0
+
+# HTTP (for OpenRouter API calls)
+requests>=2.31.0
+
+# Utilities (usually pre-installed but good to pin)
+python-dotenv>=1.0.0
