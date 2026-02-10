@@ -9,7 +9,8 @@ import os
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, SystemMessage
 print("All libraries imported successfully.")
-
+from dotenv import load_dotenv
+load_dotenv()
 class InsuranceApplicationRAG:
     def __init__(self):
         print("🚀 Initializing Insurance RAG System...")
@@ -534,9 +535,11 @@ class KnowledgeRetrieverAgent:
     
 class SuggestionGeneratorAgent:
     def __init__(self):
+
+        api_key=os.environ.get("OPENROUTER_API_KEY")
         self.llm = ChatOpenAI(
             model="deepseek/deepseek-r1-0528:free",
-            api_key="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",
+            api_key=api_key,
             base_url="https://openrouter.ai/api/v1",
             temperature=0.1,
             max_tokens=2000,
@@ -800,4 +803,5 @@ class InsuranceApplicationDemo:
 
 if __name__ == "__main__":
     demo = InsuranceApplicationDemo()
+
     demo.run()
